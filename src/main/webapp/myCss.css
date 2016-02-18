@@ -21,3 +21,9 @@
 .jumbotron{
     background-color:blue;
 }
+.container{
+    padding:20px;
+}
+body{
+    background-color:grey;
+}

@@ -17,62 +17,70 @@
         <title>About</title>
     </head>
     <body>
-         <nav class="navbar navbar-inverse navbar-fixed-top">
-             <div class="container-fluid">
-                 <div class="navbar-header">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                 </div>
-                 
+                </div>
+
                 <a class="navbar-brand" href="Resume.jsp">Scott's Resume</a>
-                
+
                 <div id="navbar" class="collapse navbar-collapse" aria-expanded="false" align='right'>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="Resume.jsp">Home</a></li>
-                      <li><a href="Contact.jsp">Contact</a></li>
+                        <li><a href="Resume.jsp">Home</a></li>
+                        <li><a href="Contact.jsp">Contact</a></li>
                     </ul>
                 </div>
             </div>
-         </nav>
+        </nav>
 
-
-        <div class="row">
-            <div class ="container">
-                <div class="panel panel-default">
-                    <div class="panel-heading">All Games</div>
-                    <div class="panel-body">
-                        <p>Uses a fake database.</p>
+        <div class="bs-component">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class ="container">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Games</div>
+                            <div class="panel-body">
+                                <p>Uses a fake database.</p>
+                            </div>
+                            <table class="table table-hover" width="100px" cellspacing="2" cellpadding="5">
+                                <tr>
+                                    <th class=" ">Game ID</th>
+                                    <th class=" ">Name</th>
+                                    <th class=" ">Date Added</th>
+                                    <th class=" ">Rating</th>
+                                    <th class=" ">Difficulty</th>
+                                </tr>
+                                <c:forEach var="g" items="${games}">
+                                    <tr>
+                                        <td class="success"> ${g.gameId} </td>
+                                        <td class="success"> ${g.name} </td>
+                                        <td class="success"> ${g.desc}</td>
+                                        <td class="success"> ${g.rating} </td>
+                                        <td class="success"> ${g.dif} </td>
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                            <center>
+                                <form id="back" name="back" method="POST" action="Resume.jsp" style="padding:10px;">
+                                    <input class="btn btn-info" type="submit" name="submit" value="Take me to Resmue">
+                                </form>
+                            </center>
+                        </div>
                     </div>
-                    <table class="table table-hover" width="100px" cellspacing="2" cellpadding="5">
-                        <tr>
-                            <th class=" ">Game ID</th>
-                            <th class=" ">Name</th>
-                            <th class=" ">Date Added</th>
-                            <th class=" ">Rating</th>
-                            <th class=" ">Difficulty</th>
-                        </tr>
-                        <c:forEach var="g" items="${games}">
-                            <tr>
-                                <td class="success"> ${g.gameId} </td>
-                                <td class="success"> ${g.name} </td>
-                                <td class="success"> ${g.desc}</td>
-                                <td class="success"> ${g.rating} </td>
-                                <td class="success"> ${g.dif} </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                    <center>
-                        <form id="back" name="back" method="POST" action="Resume.jsp">
-                            <input class="btn btn-info" type="submit" name="submit" value="Take me to Resmue">
-                        </form>
-                    </center>
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                Created by Scott Muth
+            </div>
+        </footer>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
