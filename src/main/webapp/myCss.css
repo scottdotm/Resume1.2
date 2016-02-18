@@ -15,3 +15,9 @@
     background-image: url("background.jpg");
     opacity: 0.5;
 }*/
+#intro{
+    background-image: url("background.jpg") ;
+}
+.jumbotron{
+    background-color:blue;
+}
